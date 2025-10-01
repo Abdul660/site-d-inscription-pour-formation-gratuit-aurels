@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Institut Aurels - Formation Gratuite d'Excellence</title>
+    <meta name="description" content="Institut Aurels - La formation gratuite qui propulse votre avenir. Grande école ivoirienne en ouverture offrant des formations en anglais, informatique, développement web et cybersécurité.">
+    <meta property="og:title" content="Institut Aurels - Formation Gratuite d'Excellence">
+    <meta property="og:description" content="La formation gratuite qui propulse votre avenir. Grande école ivoirienne en ouverture.">
+    <meta property="og:image" content="https://via.placeholder.com/1200x630.png?text=Institut+Aurels">
+    <meta property="og:url" content="https://institut-aurels.ci">
+    <style>
+        /* Variables CSS */
+        :root {
+            --primary-blue: #1E3A8A;
+            --accent-orange: #1E3A8A;
+            --whatsapp-green: #25D366;
+            --white: #FFFFFF;
+            --light-gray: #F8FAFC;
+            --dark-gray: #334155;
+            --transition: all 0.3s ease;
+        }
+
+        /* Reset et styles de base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-gray);
+            background-color: var(--white);
+        }
+
+        h1, h2, h3, h4 {
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+        }
+
+        .btn-whatsapp {
+            background-color: var(--whatsapp-green);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #128C7E;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-cta {
+            background-color: var(--accent-orange);
+            color: var(--white);
+        }
+
+        .btn-cta:hover {
+            background-color: #EA580C;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .section {
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent-orange);
+            margin: 1rem auto;
+            border-radius: 2px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .logo span {
+            color: var(--accent-blanc);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: var(--white);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-link:hover {
+            color: var(--accent-orange);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(30, 58, 138, 0.8), rgba(30, 58, 138, 0.9)), url('https://via.placeholder.com/1920x1080.png?text=Étudiants+Institut+Aurels') center/cover no-repeat;
+            color: var(--white);
+            padding: 8rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            color: var(--white);
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Formations Section */
+        .formations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .formation-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+
+        .formation-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .formation-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--primary-blue);
+        }
+
+        .formation-card h3 {
+            margin-bottom: 1rem;
+        }
+
+        /* Pourquoi Section */
+        .pourquoi {
+            background-color: var(--light-gray);
+        }
+
+        .pourquoi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .pourquoi-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .pourquoi-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent-orange);
+        }
+
+        /* Formulaire Section */
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-input, .form-select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #CBD5E1;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-input:focus, .form-select:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
+        }
+
+        /* À propos Section */
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .value-card {
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .value-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--primary-blue);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-column h3 {
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 3px;
+            background-color: var(--accent-orange);
+            margin-top: 0.5rem;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-orange);
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background-color: var(--accent-orange);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .whatsapp-fixed {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-menu {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                background-color: var(--primary-blue);
+                flex-direction: column;
+                align-items: center;
+                padding: 2rem 0;
+                transition: var(--transition);
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .section {
+                padding: 3rem 0;
+            }
+
+            .whatsapp-fixed {
+                bottom: 1rem;
+                right: 1rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.8s ease forwards;
+        }
+        .hero {
+
+            background-image: url('images/hero-bg.jpg'); /* ton image */
+            background-size: cover;       /* l’image couvre toute la section */
+            background-position: center;  /* centrée */
+            background-repeat: no-repeat; /* pas de répétition */
+            color: white;                 /* texte lisible */
+            position: relative;
+            padding: 120px 20px;          /* espace interne */
+          }
+          .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.5);  /* overlay sombre pour lisibilité */
+          }
+          .hero .container {
+            position: relative;
+            z-index: 1; /* pour que le texte passe au-dessus de l’overlay */
+}
+
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">Institut <span>Aurels</span></div>
+            <nav>
+                <button class="mobile-menu-btn">☰</button>
+                <ul class="nav-menu">
+                    <li><a href="#accueil" class="nav-link">Accueil</a></li>
+                    <li><a href="#formations" class="nav-link">Formations</a></li>
+                    <li><a href="#pourquoi" class="nav-link">Pourquoi Aurels</a></li>
+                    <li><a href="#inscription" class="nav-link">Inscription</a></li>
+                    <li><a href="#apropos" class="nav-link">À propos</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="hero">
+        <div class="container">
+            <h1>Institut Aurels lance une formation gratuite</h1>
+            <p>À l'occasion de son ouverture l'institut de technologie Aurels initie une formation 100% gratuite dédiée exclusivement aux bacheliers 2025 et aux professionnels en quête d'évolution.</p>
+            <div class="hero-buttons">
+                <a href="#inscription" class="btn btn-cta">S'inscrire maintenant</a>
+                <a href="https://wa.me/225XXXXXXXXXX" class="btn btn-whatsapp">
+                    <span>Joindre sur WhatsApp</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formations Section -->
+    <section id="formations" class="section">
+        <div class="container">
+            <h2 class="section-title">Formations Initié</h2>
+            <div class="formations-grid">
+                <div class="formation-card fade-in">
+                    <div class="formation-icon">🌐</div>
+                    <h3>Anglais intensif</h3>
+                    <p>Maîtrisez l'anglais professionnel pour un monde globalisé</p>
+                </div>
+                <div class="formation-card fade-in">
+                    <div class="formation-icon">💻</div>
+                    <h3>Informatique appliquée</h3>
+                    <p>Dominez les outils numériques du quotidien</p>
+                </div>
+                <div class="formation-card fade-in">
+                    <div class="formation-icon">🌍</div>
+                    <h3>Développement web</h3>
+                    <p>Créez des sites modernes et performants</p>
+                </div>
+                <div class="formation-card fade-in">
+                    <div class="formation-icon">🔒</div>
+                    <h3>Cyber Security</h3>
+                    <p>Protégez les données et les systèmes critiques</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Pourquoi Section -->
+<section id="pourquoi" class="section pourquoi">
+  <div class="container">
+    <h2 class="section-title">Pourquoi l’Institut Aurels organise cette formation ?</h2>
+    <div class="pourquoi-grid">
+      
+      <div class="pourquoi-card fade-in">
+        <div class="pourquoi-icon">🎓</div>
+        <h3>Aider les jeunes</h3>
+        <p>Aider ceux qui cherchent à s'améliorer et à se former.</p>
+      </div>
+
+      <div class="pourquoi-card fade-in">
+        <div class="pourquoi-icon">📘</div>
+        <h3>Renouveler les bases</h3>
+        <p>Offrir une bonne base de connaissances essentielles.</p>
+      </div>
+
+      <div class="pourquoi-card fade-in">
+        <div class="pourquoi-icon">🤝</div>
+        <h3>Accompagner les talents</h3>
+        <p>Montrer qu'il existe des structures pour soutenir les ambitions.</p>
+      </div>
+
+      <div class="pourquoi-card fade-in">
+        <div class="pourquoi-icon">🌍</div>
+        <h3>Développement durable</h3>
+        <p>Contribuer au développement des compétences locales.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+    <!-- Formulaire Section -->
+    <section id="inscription" class="section">
+        <div class="container">
+            <h2 class="section-title">Inscription à la formation</h2>
+            <div class="form-container fade-in">
+                <form id="inscription-form">
+                    <div class="form-group">
+                        <label for="nom" class="form-label">Nom complet</label>
+                        <input type="text" id="nom" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="form-label">Adresse email</label>
+                        <input type="email" id="email" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="formation" class="form-label">Formation choisie</label>
+                        <select id="formation" class="form-select" required>
+                            <option value="">Sélectionnez une formation</option>
+                            <option value="anglais">Anglais intensif</option>
+                            <option value="informatique">Informatique appliquée</option>
+                            <option value="developpement">Développement web</option>
+                            <option value="cybersecurite">Cyber Security</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-cta" style="width: 100%;">S'inscrire maintenant</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- À propos Section -->
+    <section id="apropos" class="section">
+        <div class="container">
+            <h2 class="section-title">À propos de l'Institut Aurels</h2>
+            <div class="about-content">
+                <p>L'Institut Aurels est une grande école ivoirienne en ouverture, dédiée à l'excellence académique et à la formation professionnelle de qualité. Notre mission est de rendre l'éducation supérieure accessible à tous.</p>
+                <p>Notre vision est de former la prochaine génération de leaders et de professionnels compétents, capables de contribuer au développement économique et social de la Côte d'Ivoire et de l'Afrique.</p>
+                
+                <div class="values-grid">
+                    <div class="value-card">
+                        <div class="value-icon">🎯</div>
+                        <h3>Excellence</h3>
+                        <p>Nous visons l'excellence dans tous nos programmes et formations</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">🤝</div>
+                        <h3>Intégrité</h3>
+                        <p>Nous agissons avec transparence et éthique dans toutes nos actions</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">🌱</div>
+                        <h3>Innovation</h3>
+                        <p>Nous adoptons des approches pédagogiques modernes et innovantes</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Institut Aurels</h3>
+                    <p>La formation gratuite qui propulse votre avenir. Grande école ivoirienne en ouverture.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">in</a>
+                        <a href="#" class="social-link">f</a>
+                        <a href="https://wa.me/225XXXXXXXXXX" class="social-link">w</a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Nos formations</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Anglais intensif</a></li>
+                        <li><a href="#">Informatique appliquée</a></li>
+                        <li><a href="#">Développement web</a></li>
+                        <li><a href="#">Cyber Security</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact</h3>
+                    <ul class="footer-links">
+                        <li>Abidjan, Côte d'Ivoire</li>
+                        <li>Email: contact@institut-aurels.ci</li>
+                        <li>Tél: +225 07 48 58 85 31</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Institut Aurels. Tous droits réservés.</p>
+                <p><a href="#">Mentions légales</a> | <a href="#">Politique de confidentialité</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bouton WhatsApp fixe -->
+    <div class="whatsapp-fixed">
+        <a href="https://wa.me/225XXXXXXXXXX" class="btn btn-whatsapp">
+            <span>WhatsApp</span>
+        </a>
+    </div>
+
+    <script>
+        // Menu mobile
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navMenu = document.querySelector('.nav-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Fermer le menu en cliquant sur un lien
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Animation au défilement
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const fadeInOnScroll = () => {
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.style.opacity = 1;
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+
+        // Initialiser l'état des éléments
+        fadeElements.forEach(element => {
+            element.style.opacity = 0;
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+        });
+
+        window.addEventListener('scroll', fadeInOnScroll);
+        window.addEventListener('load', fadeInOnScroll);
+
+        // Gestion du formulaire
+        const inscriptionForm = document.getElementById('inscription-form');
+        
+        inscriptionForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Récupération des données du formulaire
+            const nom = document.getElementById('nom').value;
+            const email = document.getElementById('email').value;
+            const formation = document.getElementById('formation').value;
+            
+            // Ici, normalement on enverrait les données à un serveur
+            // Pour cet exemple, on affiche simplement un message
+            alert(`Merci ${nom} ! Votre inscription à la formation ${formation} a été enregistrée. Nous vous contacterons à l'adresse ${email} pour la suite.`);
+            
+            // Réinitialisation du formulaire
+            inscriptionForm.reset();
+        });
+    </script>
+</body>
+</html>
